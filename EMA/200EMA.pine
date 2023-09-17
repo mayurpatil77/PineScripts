@@ -1,0 +1,15 @@
+//@version=4
+
+study("200 EMA", overlay=true)
+
+// Define the EMA
+
+ema200 = ema(close, 200)
+
+// Set the color of the EMA based on the trend
+
+emaColor = ema(close, 200) > ema(close, 200)[1] ? color.green : color.red
+
+// Plot the EMA with the custom color
+
+plot(ema200, color=emaColor, linewidth=2, title="Custom EMA")
